@@ -1,11 +1,11 @@
-# Payload 3.0 Alpha Demo
+# Payload 3.0 Beta Demo
 
-This repo showcases a demo of Payload 3.0 running completely within Next.js.
+This repo showcases a demo of the Payload 3.0 Beta running completely within Next.js.
 
 > [!IMPORTANT]
-> It's extremely important to note that as of now, this demo contains ALPHA software and you are 100% guaranteed to run into bugs / weird stuff.
+> It's extremely important to note that as of now, this demo contains BETA software and you are 100% guaranteed to run into bugs / weird stuff.
 >
-> We're actively working toward a beta release, and then a full stable release as fast as we possibly can.
+> We're actively working toward a stable release as fast as we possibly can.
 
 ### Highlights
 
@@ -29,35 +29,40 @@ This repo showcases a demo of Payload 3.0 running completely within Next.js.
 
 We are making this available to our community so that we can gather your feedback and test the new approach that Payload is taking. Don't expect it to be fully functional yet. There are some things that we are aware of that are not yet completed, but we're going to keep blazing through the remaining items as fast as we can to reach stable 3.0 as quickly and efficiently as possible. Here are a few of the items that we are still working on (not a full list):
 
-1. `beforeDuplicate` hooks
-1. The config `preview` function
-1. Document Duplication
 1. Documentation
 1. Vercel Blob Storage adapter
 1. Lots of bugs for sure
 1. 100% of tests passing
 1. Compiler speed improvements (turbo is beta still, it is slower than it should be. it will get faster)
 1. Overall speed improvements
-1. Support for all official plugins
 1. An install script to be able to install Payload easily into any existing Next.js app
 1. A full list of breaking changes for 2.0 -> 3.0, including an in-depth migration guide
+
+### Existing Nextjs project
+
+You can install Payload into your existing Nextjs project using this command:
+```
+npx create-payload-app@beta
+```
+Contents from `src/app` will have to be moved into a new directory `src/app/(app)` so that Payload's root layout and routes can remain isolated from the rest of your app.
 
 ### Using this repo
 
 To try out this repo yourself, follow the steps below:
 
-1. Clone the repo to your computer (`git clone git@github.com:payloadcms/payload-3.0-alpha-demo.git`)
-1. `cd` into the new folder by running `cd ./payload-3.0-alpha-demo`
-1. Copy the `.env.example` by running `cp .env.example .env` in the repo, then fill out the values including the connection string to your DB
-1. Install dependencies with whatever package manager you use (`yarn`, `npm install`, `pnpm i`, etc.)
-1. Fire it up (`yarn dev`, `npm run dev`, `pnpm dev`, etc.)
-1. Visit https://localhost:3000 and log in with the user created within the config's `onInit` method
+1. Clone the repo to your computer (`git clone git@github.com:payloadcms/payload-3.0-demo.git`)
+2. `cd` into the new folder by running `cd ./payload-3.0-demo`
+3. Copy the `.env.example` by running `cp .env.example .env` in the repo, then fill out the values including the connection string to your DB
+4. Install dependencies with whatever package manager you use (`yarn`, `npm install`, `pnpm i`, etc.)
+5. Start your database. For local postgresql use `.\start-database.sh` to start it in docker container.
+6. Fire it up (`yarn dev`, `npm run dev`, `pnpm dev`, etc.)
+7. Visit https://localhost:3000 and log in with the user created within the config's `onInit` method
 
 ### Follow along with breaking changes
 
-There is a possibility that we will make breaking changes before releasing the beta, and then the full stable version of Payload 3.0.
+There is a possibility that we will make breaking changes before releasing the full stable version of Payload 3.0.
 
-**To follow along with breaking changes in advance of the full, stable release,** you can keep an eye on the [CHANGELOG.md](https://github.com/payloadcms/payload-3.0-alpha-demo/blob/main/CHANGELOG.md).
+**To follow along with breaking changes in advance of the full, stable release,** you can keep an eye on the [CHANGELOG.md](https://github.com/payloadcms/payload-3.0-demo/blob/main/CHANGELOG.md).
 
 ### Technical details
 
@@ -77,4 +82,4 @@ In the `tsconfig.json` within this repo, you'll see that we have `paths` set up 
 
 ### Find a bug?
 
-Open an issue on this repo at `https://github.com/payloadcms/payload-3.0-alpha-demo` with as much detail as you can provide and we will tackle them as fast as we can. Let's get stable!
+Open an issue on this repo at `https://github.com/payloadcms/payload-3.0-demo` with as much detail as you can provide and we will tackle them as fast as we can. Let's get stable!
